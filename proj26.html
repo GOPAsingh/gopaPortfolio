@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <script>
+        function validateForm() {
+            var firstName = document.forms["registrationForm"]["firstName"].value;
+            var lastName = document.forms["registrationForm"]["lastName"].value;
+            var userID = document.forms["registrationForm"]["userID"].value;
+            var address = document.forms["registrationForm"]["address"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+            var confirmPassword = document.forms["registrationForm"]["confirmPassword"].value;
+            var contactNumber = document.forms["registrationForm"]["contactNumber"].value;
+
+            if (firstName == "") {
+                alert("First Name must be filled out");
+                return false;
+            }
+            if (lastName == "") {
+                alert("Last Name must be filled out");
+                return false;
+            }
+            if (userID == "") {
+                alert("User ID must be filled out");
+                return false;
+            }
+            if (address == "") {
+                alert("Address must be filled out");
+                return false;
+            }
+            if (email == "" || !email.includes("@")) {
+                alert("Valid Email must be filled out");
+                return false;
+            }
+            if (confirmPassword == "") {
+                alert("Confirm Password must be filled out");
+                return false;
+            }
+            if (confirmPassword != document.forms["registrationForm"]["password"].value) {
+                alert("Passwords do not match");
+                return false;
+            }
+            if (contactNumber == "" || isNaN(contactNumber) || contactNumber.length != 10) {
+                alert("Valid Contact Number must be filled out");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form name="registrationForm" onsubmit="return validateForm()">
+        First Name: <input type="text" name="firstName" required><br><br>
+        Last Name: <input type="text" name="lastName" required><br><br>
+        User ID: <input type="text" name="userID" required><br><br>
+        Address: <input type="text" name="address" required><br><br>
+        Email: <input type="email" name="email" required><br><br>
+        Password: <input type="password" name="password" required><br><br>
+        Confirm Password: <input type="password" name="confirmPassword" required><br><br>
+        Contact Number: <input type="text" name="contactNumber" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

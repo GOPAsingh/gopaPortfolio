@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Grid</title>
+    <style>
+        /* Basic styling for the grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        /* Styling for each image */
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-grid">
+        <img src="gopa4.jpg" onclick="openImage(this.src)" />
+        <img src="gopa3.jpg" onclick="openImage(this.src)" />
+        <img src="gopa4.jpg" onclick="openImage(this.src)" />
+        <img src="gopa3.jpg" onclick="openImage(this.src)" />
+        <img src="gopa2.jpg" onclick="openImage(this.src)" />
+        <img src="gopa3.jpg" onclick="openImage(this.src)" />
+        <img src="gopa4.jpg" onclick="openImage(this.src)" />
+        <img src="gopa3.jpg" onclick="openImage(this.src)" />
+        <img src="gopa2.jpg" onclick="openImage(this.src)" />
+    </div>
+
+    <script>
+        // JavaScript function to open image in new tab
+        function openImage(imageSrc) {
+            window.open(imageSrc);
+        }
+    </script>
+</body>
+</html>

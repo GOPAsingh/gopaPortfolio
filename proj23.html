@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Size Changing</title>
+</head>
+<body>
+  <p id="text" style="color:red;font-size:1px;">Text growing</p>
+  <button onclick="startGrowing()">Start</button>
+  <button onclick="stopGrowing()">Stop</button>
+
+  <script>
+    let growing = true;
+    let fontSize = 1;
+
+    function startGrowing() {
+      growing = true;
+      increaseFontSize();
+    }
+
+    function stopGrowing() {
+      growing = false;
+      document.getElementById("text").style.color = "blue";
+      decreaseFontSize();
+    }
+
+    function increaseFontSize() {
+      if (!growing) return;
+      fontSize++;
+      document.getElementById("text").style.fontSize = fontSize + "px";
+      setTimeout(increaseFontSize, 100);
+    }
+
+    function decreaseFontSize() {
+      if (fontSize <= 5) return;
+      fontSize--;
+      document.getElementById("text").style.fontSize = fontSize + "px";
+      setTimeout(decreaseFontSize, 100);
+    }
+  </script>
+</body>
+</html>
